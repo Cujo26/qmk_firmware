@@ -25,8 +25,8 @@
 
 /* key matrix pins */
 
-#define MATRIX_ROW_PINS { 41, 30, 39, 38}
-#define MATRIX_COL_PINS { 27, 28, 29, 36, 35, 2, 3, 4, 5, 6, 7, 8, 9, 11 }
+#define MATRIX_ROW_PINS { GP41, GP30, GP39, GP38}
+#define MATRIX_COL_PINS { GP27, GP28, GP29, GP36, GP35, GP2, GP3, GP4, GP5, GP6, GP7, GP8, GP9, GP11 }
 
 /* COL2ROW,  ROW2COL */
 #define DIODE_DIRECTION COL2ROW
