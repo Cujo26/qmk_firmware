@@ -28,54 +28,66 @@
  * represents the switch matrix.
  */
 
+
+/*
+
+Full matrix example
+
+k00, k01, k02, k03, k04, k05, k06, k07, k08, k09, k0A, k0B, k0C, k0D \
+k10, k11, k12, k13, k14, k15, k16, k17, k18, k19, k1A, k1B, k1C      \
+k20, k21, k22, k23, k24, k25, k26, k27, k28, k29, k2A,      k2C, k2D \
+          k32, k33, k34, k35, k36, k37, k38, k39, k3A,               \
+
+*/
+
 #define LAYOUT_40_hhkb_7u_splitshift( \
     k00, k01, k02, k03, k04, k05, k06, k07, k08, k09, k0A, k0B, k0C, k0D \
-    k10, k11, k12, k13, k14, k15, k16, k17, k18, k19, k1A, k1B, k1C, k1D \
-    k20, k21, k22, k23, k24, k25, k26, k27, k28, k29, k2A, XXX, k2C, k2D \
-              K32, k33,           k36,           k39, k3A, \
+    k10, k11, k12, k13, k14, k15, k16, k17, k18, k19, k1A, k1B, k1C      \
+    k20, k21, k22, k23, k24, k25, k26, k27, k28, k29, k2A,      k2C, k2D \
+              k32, k33, k34, k35, k36, k37, k38, k39, k3A,               \
 ) \
 { \
     { k00, k01, k02, k03, k04, k05, k06, k07, k08, k09, k0A, k0B, k0C, k0D }, \
-    { k10, k11, k12, k13, k14, k15, k16, k17, k18, k19, k1A, k1B, k1C, k1D }, \
-    { k20, k21, k22, k23, k24, k25, k26, k27, k28, k29, k2A, XXX, k2C, k2D }, \
-    { XXX, XXX, k32, k33, XXX, XXX, k26, XXX, XXX, k39, k3A, XXX ,XXX, XXX }, \
+    { k10, k11, k12, k13, k14, k15, k16, k17, k18, k19, k1A, k1B, k1C      }, \
+    { k20, k21, k22, k23, k24, k25, k26, k27, k28, k29, k2A,      k2C, k2D }, \
+    {           k32, k33,           k26,           k39, k3A,               }, \
 }
 
 #define LAYOUT_40_hhkb_7u_fullshift( \
     k00, k01, k02, k03, k04, k05, k06, k07, k08, k09, k0A, k0B, k0C, k0D \
-    k10, k11, k12, k13, k14, k15, k16, k17, k18, k19, k1A, k1B, k1C, k1D \
-    k20, k21, k22, k23, k24, k25, k26, k27, k28, k29, k2A, XXX, k2C,     \
-              K32, k33,           k36,           k39, k3A, \
+    k10, k11, k12, k13, k14, k15, k16, k17, k18, k19, k1A, k1B, k1C      \
+    k20, k21, k22, k23, k24, k25, k26, k27, k28, k29, k2A,      k2C, k2D \
+              k32, k33, k34, k35, k36, k37, k38, k39, k3A,               \
 ) \
 { \
-    { k00, k01, k02, k03, k04, k05, k06, k07, k08, k09, k0A, k0B, k0C, k0D }, \
-    { k10, k11, k12, k13, k14, k15, k16, k17, k18, k19, k1A, k1B, k1C, k1D }, \
-    { k20, k21, k22, k23, k24, k25, k26, k27, k28, k29, k2A, XXX, k2C, XXX }, \
-    { XXX, XXX, k32, k33, XXX, XXX, k26, XXX, XXX, k39, k3A, XXX ,XXX, XXX }, \
+    { k00, k01, k02, k03, k04, k05, k06, k07, k08, k09, k0A, k0B, k0C, k0D  }, \
+    { k10, k11, k12, k13, k14, k15, k16, k17, k18, k19, k1A, k1B, k1C       }, \
+    { k20, k21, k22, k23, k24, k25, k26, k27, k28, k29, k2A,      k2C,      }, \
+    {           k32, k33,           k26,           k39, k3A,                }, \
 }
 
 #define LAYOUT_40_hhkb_split_fullshift( \
     k00, k01, k02, k03, k04, k05, k06, k07, k08, k09, k0A, k0B, k0C, k0D \
-    k10, k11, k12, k13, k14, k15, k16, k17, k18, k19, k1A, k1B, k1C, k1D \
-    k20, k21, k22, k23, k24, k25, k26, k27, k28, k29, k2A, XXX, k2C, XXX \
-              K32, k33, K34, k35, k36, k37, k38, k39, k3A, \
+    k10, k11, k12, k13, k14, k15, k16, k17, k18, k19, k1A, k1B, k1C      \
+    k20, k21, k22, k23, k24, k25, k26, k27, k28, k29, k2A,      k2C, k2D \
+              k32, k33, k34, k35, k36, k37, k38, k39, k3A,               \
 ) \
 { \
     { k00, k01, k02, k03, k04, k05, k06, k07, k08, k09, k0A, k0B, k0C, k0D }, \
-    { k10, k11, k12, k13, k14, k15, k16, k17, k18, k19, k1A, k1B, k1C, k1D }, \
-    { k20, k21, k22, k23, k24, k25, k26, k27, k28, k29, k2A, XXX, k2C, XXX }, \
-    { XXX, XXX, k32, k33, k34, k35, k36, k37, k38, k39, k3A, XXX ,XXX, XXX }, \
+    { k10, k11, k12, k13, k14, k15, k16, k17, k18, k19, k1A, k1B, k1C,     }, \
+    { k20, k21, k22, k23, k24, k25, k26, k27, k28, k29, k2A,      k2C,     }, \
+    {           k32, k33, k34, k35,      k37, k38, k39, k3A,               }, \
 }
 
 #define LAYOUT_40_hhkb_split_splitshift( \
     k00, k01, k02, k03, k04, k05, k06, k07, k08, k09, k0A, k0B, k0C, k0D \
-    k10, k11, k12, k13, k14, k15, k16, k17, k18, k19, k1A, k1B, k1C, k1D \
-    k20, k21, k22, k23, k24, k25, k26, k27, k28, k29, k2A, XXX, k2C, k2D \
-              K32, k33, K34, k35, k36, k37, k38, k39, k3A,               \
+    k10, k11, k12, k13, k14, k15, k16, k17, k18, k19, k1A, k1B, k1C      \
+    k20, k21, k22, k23, k24, k25, k26, k27, k28, k29, k2A,      k2C, k2D \
+              k32, k33, k34, k35, k36, k37, k38, k39, k3A,               \
 ) \
 { \
     { k00, k01, k02, k03, k04, k05, k06, k07, k08, k09, k0A, k0B, k0C, k0D }, \
-    { k10, k11, k12, k13, k14, k15, k16, k17, k18, k19, k1A, k1B, k1C, k1D }, \
-    { k20, k21, k22, k23, k24, k25, k26, k27, k28, k29, k2A, XXX, k2C, k2D }, \
-    { XXX, XXX, k32, k33, XXX, XXX, k26, XXX, XXX, k39, k3A, XXX ,XXX, XXX }, \
+    { k10, k11, k12, k13, k14, k15, k16, k17, k18, k19, k1A, k1B, k1C,     }, \
+    { k20, k21, k22, k23, k24, k25, k26, k27, k28, k29, k2A,      k2C, k2D }, \
+    {           k32, k33, k34, k35,      k37, k38, k39, k3A,               }, \
 }
